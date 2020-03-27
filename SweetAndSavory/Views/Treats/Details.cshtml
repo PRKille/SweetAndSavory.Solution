@@ -4,14 +4,14 @@
 
 <h2>@Html.DisplayFor(model => model.Name)'s Flavors:</h2>
 
-@if(Model.Treats.Count > 0)
+@if(Model.Flavors.Count > 0)
 {
   @foreach (var join in Model.Flavors)
   {
     <p>@join.Flavor.Name</p>
     @if(User.Identity.IsAuthenticated)
     {
-      @using (Html.BeginForm("DeleteTreat", "Flavor"))
+      @using (Html.BeginForm("DeleteTreat", "Flavors"))
       {
         @Html.Hidden("joinId", @join.TreatFlavorId)
         <input type="submit" value="Delete">

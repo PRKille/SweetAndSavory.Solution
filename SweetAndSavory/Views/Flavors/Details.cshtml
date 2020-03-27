@@ -1,4 +1,4 @@
-@{Layout + "_Layout";}
+@{Layout = "_Layout";}
 @model SweetAndSavory.Models.Flavor
 @using System.Security.Claims
 
@@ -6,7 +6,7 @@
 
 @if(@Model.Treats.Count > 0)
 {
-  @foreach (var join in ModelExpressionProvider.Treats)
+  @foreach (var join in Model.Treats)
   {
     <p>@join.Treat.Name</p>
   }
@@ -14,4 +14,5 @@
 @if(User.Identity.IsAuthenticated)
 {
   <p>@Html.ActionLink("Edit this Flavor", "Edit", new {id = Model.FlavorId})</p>
+  <p>@Html.ActionLink("Delete this Flavor", "Delete", new {id = Model.FlavorId})</p>
 }
