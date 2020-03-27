@@ -13,6 +13,7 @@
 }
 @if(User.Identity.IsAuthenticated)
 {
+  <p>@Html.ActionLink("Add this flavor option to a treat", "AddTreat", new {id = Model.FlavorId})</p>
   <p>@Html.ActionLink("Edit this Flavor", "Edit", new {id = Model.FlavorId})</p>
   <p>@Html.ActionLink("Delete this Flavor", "Delete", new {id = Model.FlavorId})</p>
 }
