@@ -24,8 +24,9 @@ namespace SweetAndSavory.Controllers
 
     public ActionResult Index()
     {
-      
-      return View();
+      var allFlavors = _db.Flavors;
+      ViewBag.AllTreats = _db.Treats.ToList();
+      return View(allFlavors);
     }
 
     [Authorize]

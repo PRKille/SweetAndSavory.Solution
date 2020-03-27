@@ -3,11 +3,11 @@
 
 <h1>Welcome To Pierre's Treat Shop!</h1>
 
-<h2>Please click @Html.ActionLink("here", "Index", "Treats") to view all of our treats!</h2>
+<h2>Please click @Html.ActionLink("here", "Index", "Flavors") to view all of our treats!</h2>
 
 @if(User.Identity.IsAuthenticated)
 {
-  <h2>@Html.ActionLink("Click Here", "Index", "Flavors") to edit the menu.</h2>
+  <h2>@Html.ActionLink("Click Here", "Index", "Treats") to edit the menu.</h2>
 }
 
 <p>Emplyees Click @Html.ActionLink("here", "Index", "Account") to log-in.</p>
