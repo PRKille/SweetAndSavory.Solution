@@ -1,0 +1,31 @@
+@{Layout = "_Layout";}
+@model SweetAndSavory.Models.Treat
+@using System.Security.Claims
+
+<h2>@Html.DisplayFor(model => model.Name)'s Flavors:</h2>
+
+@if(Model.Treats.Count > 0)
+{
+  @foreach (var join in Model.Flavors)
+  {
+    <p>@join.Flavor.Name</p>
+    @if(User.Identity.IsAuthenticated)
+    {
+      @using (Html.BeginForm("DeleteTreat", "Flavor"))
+      {
+        @Html.Hidden("joinId", @join.TreatFlavorId)
+        <input type="submit" value="Delete">
+      }
+    }
+  }
+}
+else
+{
+  <h2>We're working on flavors just for you!</h2>
+}
+
+@if(User.Identity.IsAuthenticated)
+{
+  <p>@Html.ActionLink("Edit this Treat", "Edit", new {id = Model.TreatId})</p>
+  <p>@Html.ActionLink("Delete this Treat", "Delete", new {id = Model.TreatId})</p>
+}

@@ -1,0 +1,17 @@
+@{Layout + "_Layout";}
+@model SweetAndSavory.Models.Flavor
+@using System.Security.Claims
+
+<h2>These treats can be made with this flavor!</h2>
+
+@if(@Model.Treats.Count > 0)
+{
+  @foreach (var join in ModelExpressionProvider.Treats)
+  {
+    <p>@join.Treat.Name</p>
+  }
+}
+@if(User.Identity.IsAuthenticated)
+{
+  <p>@Html.ActionLink("Edit this Flavor", "Edit", new {id = Model.FlavorId})</p>
+}
