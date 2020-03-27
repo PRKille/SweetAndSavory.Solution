@@ -1,30 +1,36 @@
 @{Layout = "_Layout";}
 @using SweetAndSavory.Models
 @model IEnumerable<SweetAndSavory.Models.Flavor>
-
 <h2>Welcome to Pierre's Menu!</h2>
-@if(Model.Any())
-{
-  <h3>Our Flavors:</h3>
-  @foreach (Flavor flavor in Model)
-  {
-    <p>@Html.ActionLink($"{flavor.Name}", "Details", new{id = flavor.FlavorId})</p>
-  }
-}
-else
-{
-  <h2>We're creating more flavors. Come back soon!</h2>
-}
-<hr>
-@if(ViewBag.AllTreats.Count > 0)
-{
-  <h3>Our Treats:</h3>
-  @foreach (Treat treat in ViewBag.AllTreats)
-  {
-    <p>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new{id = treat.TreatId})</p>
-  }
-}
-else
-{
-  <h2>We're whipping up some treats. Come back soon!</h2>
-}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      @if(Model.Any())
+      {
+        <h3>Our Flavors:</h3>
+        @foreach (Flavor flavor in Model)
+        {
+          <p>@Html.ActionLink($"{flavor.Name}", "Details", new{id = flavor.FlavorId})</p>
+        }
+      }
+      else
+      {
+        <h2>We're creating more flavors. Come back soon!</h2>
+      }
+    </div>
+    <div class="col-md-6">
+    @if(ViewBag.AllTreats.Count > 0)
+    {
+      <h3>Our Treats:</h3>
+      @foreach (Treat treat in ViewBag.AllTreats)
+      {
+        <p>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new{id = treat.TreatId})</p>
+      }
+    }
+    else
+    {
+      <h2>We're whipping up some treats. Come back soon!</h2>
+    }
+    </div>
+  </div>
+</div>
