@@ -17,13 +17,13 @@ namespace SweetAndSavory.Controllers
 
     public ActionResult Index()
     {
-      List<Treat> model = _db.Treats.Tolist();
+      List<Treat> model = _db.Treats.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      return ViewModels();
+      return View();
     }
 
     [HttpPost]
