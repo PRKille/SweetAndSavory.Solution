@@ -1,0 +1,15 @@
+@{Layout = "_Layout";}
+
+@using SweetAndSavory.ViewModels
+@model LoginViewModel
+
+<h2>Please enter your credentials:</h2>
+<hr>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(c => c.Email)
+  @Html.TextBoxFor(c => c.Email)
+  @Html.LabelFor(c => c.Password)
+  @Html.TextBoxFor(c => c.Password)
+  <input type="submit" value="Log In" class="btn-block">
+}
