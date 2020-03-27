@@ -19,7 +19,7 @@ else
 {
   @foreach (Treat treat in ViewBag.AllTreats)
   {
-    <p>@Html.ActionLink($"{treat.Name}", "Details", new{id = treat.TreatId})</p>
+    <p>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new{id = treat.TreatId})</p>
   }
 }
 else
