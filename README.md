@@ -10,6 +10,11 @@ This application will allow users to view the many treats and flavors available 
 
 ## Specifications:
 
+* A customer should be able to see a list of all treats and all flavors.
+* A customer should be able to view details of each treat or flavor that displays their corresponding options.
+* An employee should be able to log in and out of the system.
+* Only employees should be able to create, update, or delete treats or flavors. 
+
 
 ![Database relationships:](https://)
 ![Website navigation](https://)
