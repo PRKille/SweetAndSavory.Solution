@@ -37,7 +37,7 @@ namespace SweetAndSavory.Controllers
 
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult> Create(Flavor Flavor, int TreatId)
+    public ActionResult Create(Flavor Flavor, int TreatId)
     {
       _db.Flavors.Add(Flavor);
       if (TreatId != 0)
